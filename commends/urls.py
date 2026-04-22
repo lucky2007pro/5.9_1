@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import CommendView, CommendCreateView
+from .views import CommendListCreateView, CommendDetailView
 
 urlpatterns = [
-    path('', CommendView.as_view()),
-    path('create/', CommendCreateView.as_view()),
+    path('', CommendListCreateView.as_view(), name='commend-list'),
+    path('<int:pk>/', CommendDetailView.as_view(), name='commend-detail'),
 ]
